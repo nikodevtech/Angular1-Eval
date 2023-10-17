@@ -1,0 +1,9 @@
+<div class="container">
+    <h3>Preguntas y respuestas</h3>
+    <ul class="list-group list-group-light list-group-numbered mt-5">
+        <li class="list-group-item" *ngFor="let pregunta of preguntas">
+            <h5>{{ pregunta.pregunta }}</h5>
+            <p>{{ pregunta.respuesta }}</p>
+        </li>
+    </ul>
+</div>

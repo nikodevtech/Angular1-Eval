@@ -1,0 +1,14 @@
+h3 {
+    text-align: center;
+    color: rgb(255, 129, 129);
+    text-shadow: 1px 1px 1px black   
+}
+table {
+    border-color: rgb(255, 129, 129);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+th{
+    background-color: rgb(255, 170, 170);
+}
