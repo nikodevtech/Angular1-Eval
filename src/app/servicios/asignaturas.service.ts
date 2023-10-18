@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Asignatura } from '../asignatura';
+import { ASIGNATURAS } from '../mock-asignatura';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AsignaturasService {
-  private asignaturas: Asignatura[] = [
-    { nombre: 'Desarrollo Web en entorno cliente', siglas: 'DWC', profesor: 'D. Jose María Polavieja' },
-    { nombre: 'Despliegue de aplicaciones web', siglas: 'DAW', profesor: 'D. Jose María Carazo' },
-    { nombre: 'Desarrollo web en entorno servidor', siglas: 'DWS', profesor: 'D. Regino Fdez' },
-    { nombre: 'Diseñor de interfaces web', siglas: 'DIW', profesor: 'D. Regino Fdez' },
+export class AsignaturasServicio {
+  asignaturas: Asignatura[] = [];
 
-  ];
-
-  getAsignaturas(): Asignatura[] {
-    return this.asignaturas;
+  getAsignaturas(): Observable<Asignatura[]> {
+    return of(ASIGNATURAS);
   }
 }

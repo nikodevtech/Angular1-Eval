@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from '../pregunta';
-import { PreguntasService } from '../servicios/preguntas.service';
+import { PreguntasServicio } from '../servicios/preguntas.service';
 
 @Component({
   selector: 'app-preguntas',
@@ -10,10 +10,13 @@ import { PreguntasService } from '../servicios/preguntas.service';
 export class PreguntasComponent implements OnInit {
   preguntas: Pregunta[] = [];
 
-  constructor(private preguntasService: PreguntasService) { }
+  constructor(private preguntasServicio: PreguntasServicio) { }
 
   ngOnInit(): void {
-    this.preguntas = this.preguntasService.getPreguntas();
+    this.getPreguntas();
+  }
+  getPreguntas(): void {
+    this.preguntasServicio.getPreguntas().subscribe((preguntas) => (this.preguntas = preguntas));
   }
 }
 
